@@ -9,7 +9,11 @@ qr = qrcode.QRCode(
     border=4
 )
 
-qr.add_data('https://github.com/SomtochiUmeh')
+#qr.add_data('https://github.com/SomtochiUmeh')
+
+link = input('Enter link: ')
+
+qr.add_data(link)
 qr.make(fit=True)
 
 img = qr.make_image(fill_color="black", back_color="white")
@@ -17,7 +21,11 @@ img.save('github.jpg')
 
 # https://github.com/SomtochiUmeh
 
-im=cv2.imread("github.jpg")
-det=cv2.QRCodeDetector()
-val, pts, st_code=det.detectAndDecode(im)
-print(val)
+# im=cv2.imread("github.jpg")
+# det=cv2.QRCodeDetector()
+# val, pts, st_code=det.detectAndDecode(im)
+# print(val)
+
+im = Image.open(r"github.jpg")
+ 
+im.show()
